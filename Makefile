@@ -1,4 +1,4 @@
-CC=gcc
+CC=clangee
 
 NASM=nasm
 
@@ -12,7 +12,7 @@ ARFLAGS=rcs
 
 RM=rm -f
 
-SRCS := ft_strlen.s
+SRCS := ft_strlen.s ft_strcpy.s ft_strcmp.s ft_write.s
 
 OBJS := ${SRCS:.s=.o}
 
@@ -35,7 +35,7 @@ $(MAIN): main.c $(LIB)
 	$(CC) $(CFLAGS) $< -L. -lasm -o $@
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJDIR) main.o
 
 fclean: clean
 	$(RM) $(LIB) $(MAIN)
