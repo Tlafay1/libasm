@@ -2,7 +2,7 @@ section .text
 global ft_strlen
 
 ft_strlen:
-    xor rcx, rcx    
+    xor rcx, rcx  
     test rdi, rdi
     jz .end
 

@@ -2,7 +2,7 @@ CC=clang++
 
 NASM=nasm
 
-CFLAGS=-Wall -Wextra -Werror
+CFLAGS=-Wall -Wextra -Werror -g
 
 NASMFLAGS := -f elf64
 
@@ -12,15 +12,13 @@ ARFLAGS := rcs
 
 RM := rm -f
 
-SRCS := ft_strlen.s ft_strcpy.s ft_strcmp.s ft_write.s ft_read.s
+SRCS := ft_strlen.s ft_strcpy.s ft_strcmp.s ft_write.s ft_read.s ft_strdup.s
 
-TESTS := main.cpp ft_strlen.cpp ft_write.cpp ft_read.cpp ft_strcpy.cpp ft_strcmp.cpp
+TESTS := main.cpp ft_strlen.cpp ft_write.cpp ft_read.cpp ft_strcpy.cpp ft_strcmp.cpp ft_strdup.cpp
 
 TESTS := $(addprefix tests/, $(TESTS))
 
-OBJS := ${SRCS:.s=.o}
-
-OBJDIR := $(addprefix obj/, $(OBJS))
+OBJS := $(addprefix obj/, ${SRCS:.s=.o})
 
 INCLUDE := include/libasm.h
 
@@ -32,7 +30,7 @@ MAIN := main
 
 all: $(LIB)
 
-$(LIB): $(OBJDIR)
+$(LIB): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
 obj/%.o : src/%.s $(INCLUDE)
@@ -40,7 +38,7 @@ obj/%.o : src/%.s $(INCLUDE)
 	$(NASM) $(NASMFLAGS) $< -o $@
 
 clean:
-	$(RM) $(OBJDIR) main.o
+	$(RM) $(OBJS) main.o
 
 fclean: clean
 	$(RM) $(LIB) $(MAIN)
@@ -49,8 +47,6 @@ fclean: clean
 test: $(LIB)
 	@$(CC) $(CFLAGS) \
 		-Llib \
-		-L/home/tlafay/.local/usr/src/gtest/lib \
-		-I/home/tlafay/.local/usr/src/gtest/googletest/include \
 		-I./include \
 		-pthread \
 		-o tests/test \

@@ -6,6 +6,8 @@ ft_strcpy:
 
     test rsi, rsi
     jz .empty
+    test rdi, rdi
+    jz .empty
 
 .loop:
     mov cl, byte [rsi]

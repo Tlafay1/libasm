@@ -1,6 +1,6 @@
 #include "tests.hpp"
 
-TEST(ft_strlen, test_hello_world)
+TEST(ft_strlen, hello_world)
 {
     std::string str = "Hello World!";
     ssize_t len1 = ft_strlen(str.c_str());
@@ -8,7 +8,7 @@ TEST(ft_strlen, test_hello_world)
     ASSERT_EQ(len1, len2);
 }
 
-TEST(ft_strlen, test_empty_string)
+TEST(ft_strlen, empty_string)
 {
     std::string str = "";
     ssize_t len1 = ft_strlen(str.c_str());
@@ -16,7 +16,7 @@ TEST(ft_strlen, test_empty_string)
     ASSERT_EQ(len1, len2);
 }
 
-TEST(ft_strlen, test_hello_world_newline)
+TEST(ft_strlen, hello_world_newline)
 {
     std::string str = "Hello World!\n";
     ssize_t len1 = ft_strlen(str.c_str());

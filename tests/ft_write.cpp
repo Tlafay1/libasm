@@ -1,6 +1,6 @@
 #include "tests.hpp"
 
-TEST(ft_write, test_hello_world)
+TEST(ft_write, hello_world)
 {
     int devNull = open("/dev/null", O_WRONLY);
     
@@ -12,7 +12,7 @@ TEST(ft_write, test_hello_world)
     close(devNull);
 }
 
-TEST(ft_write, test_empty_string)
+TEST(ft_write, empty_string)
 {
     int devNull = open("/dev/null", O_WRONLY);
     
@@ -24,7 +24,7 @@ TEST(ft_write, test_empty_string)
     close(devNull);
 }
 
-TEST(ft_write, test_hello_world_newline)
+TEST(ft_write, hello_world_newline)
 {
     int devNull = open("/dev/null", O_WRONLY);
     
@@ -36,7 +36,7 @@ TEST(ft_write, test_hello_world_newline)
     close(devNull);
 }
 
-TEST(ft_write, test_null_string)
+TEST(ft_write, null_string)
 {
     int devNull = open("/dev/null", O_WRONLY);
 
