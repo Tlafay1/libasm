@@ -6,12 +6,12 @@ extern malloc
 
 ft_strdup:
     mov r8, rdi
-    call ft_strlen
+    call ft_strlen WRT ..plt
 
     inc rax
     mov rdi, rax
     push r8
-    call malloc
+    call malloc WRT ..plt
     pop r8
     test rax, rax
     jz .end
