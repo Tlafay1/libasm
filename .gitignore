@@ -2,3 +2,5 @@ libasm.a
 main
 *.o
 .vscode
+.gdb_history
+peda-session-test.txt

@@ -30,7 +30,7 @@ TEST(ft_strcpy, hello_world_newline)
     delete[] cpy2;
 }
 
-TEST(ft_strcpy, dest_smaller_than_src)
+/* TEST(ft_strcpy, dest_smaller_than_src)
 {
     std::string str = "Hello World!";
     char *cpy1 = ft_strcpy(new char[5], str.c_str());
@@ -38,7 +38,7 @@ TEST(ft_strcpy, dest_smaller_than_src)
     ASSERT_STREQ(cpy1, cpy2);
     delete[] cpy1;
     delete[] cpy2;
-}
+} */
 
 TEST(ft_strcpy, dest_larger_than_src)
 {

@@ -2,7 +2,7 @@ CC=clang++
 
 NASM=nasm
 
-CFLAGS=-Wall -Wextra -Werror -g
+CFLAGS=-Wall -Wextra -Werror
 
 NASMFLAGS := -f elf64
 
@@ -34,7 +34,6 @@ $(LIB): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
 obj/%.o : src/%.s $(INCLUDE)
-	mkdir -p obj
 	$(NASM) $(NASMFLAGS) $< -o $@
 
 clean:
@@ -54,7 +53,7 @@ test: $(LIB)
 		-lasm \
 		-lgtest
 	@./tests/test
-	@$(RM) tests/test
+	@#$(RM) tests/test
 
 re: fclean all
 

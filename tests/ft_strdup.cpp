@@ -6,8 +6,8 @@ TEST(ft_strdup, hello_world)
     char *cpy1 = ft_strdup(str.c_str());
     char *cpy2 = strdup(str.c_str());
     ASSERT_STREQ(cpy1, cpy2);
-    delete[] cpy1;
-    delete[] cpy2;
+    free(cpy1);
+    free(cpy2);
 }
 
 TEST(ft_strdup, empty_string)
@@ -16,8 +16,8 @@ TEST(ft_strdup, empty_string)
     char *cpy1 = ft_strdup(str.c_str());
     char *cpy2 = strdup(str.c_str());
     ASSERT_STREQ(cpy1, cpy2);
-    delete[] cpy1;
-    delete[] cpy2;
+    free(cpy1);
+    free(cpy2);
 }
 
 TEST(ft_strdup, hello_world_newline)
@@ -26,8 +26,8 @@ TEST(ft_strdup, hello_world_newline)
     char *cpy1 = ft_strdup(str.c_str());
     char *cpy2 = strdup(str.c_str());
     ASSERT_STREQ(cpy1, cpy2);
-    delete[] cpy1;
-    delete[] cpy2;
+    free(cpy1);
+    free(cpy2);
 }
 
 TEST(ft_strdup, long_string)
@@ -36,8 +36,8 @@ TEST(ft_strdup, long_string)
     char *cpy1 = ft_strdup(str.c_str());
     char *cpy2 = strdup(str.c_str());
     ASSERT_STREQ(cpy1, cpy2);
-    delete[] cpy1;
-    delete[] cpy2;
+    free(cpy1);
+    free(cpy2);
 }
 
 TEST(ft_strdup, very_long_string)
@@ -46,6 +46,6 @@ TEST(ft_strdup, very_long_string)
     char *cpy1 = ft_strdup(str.c_str());
     char *cpy2 = strdup(str.c_str());
     ASSERT_STREQ(cpy1, cpy2);
-    delete[] cpy1;
-    delete[] cpy2;
+    free(cpy1);
+    free(cpy2);
 }
