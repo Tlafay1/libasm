@@ -4,3 +4,4 @@ main
 .vscode
 .gdb_history
 peda-session-test.txt
+tests/test
