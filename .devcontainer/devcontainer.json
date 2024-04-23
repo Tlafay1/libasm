@@ -1,0 +1,4 @@
+{
+    "name": "Nasm + google test",
+    "dockerFile": "Dockerfile"
+}
