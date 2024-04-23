@@ -31,8 +31,6 @@ MAIN := main
 all: $(LIB)
 
 $(LIB): $(OBJS)
-	mkdir -p obj
-	mkdir -p lib
 	$(AR) $(ARFLAGS) $@ $^
 
 obj/%.o : src/%.s $(INCLUDE)
