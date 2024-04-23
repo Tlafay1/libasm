@@ -1,0 +1,24 @@
+name: C/C++ tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+    - uses: Bacondish2023/setup-googletest@v1.0.1
+      with:
+        tag: v1.14.0
+    - name: make
+      run: make
+    - name: make test
+      run: make test
